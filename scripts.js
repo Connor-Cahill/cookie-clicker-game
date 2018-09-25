@@ -3,7 +3,7 @@ let cookieCount = 0;
 let clickPower = 10;
 let clickPowerPriceAmount = 50;
 let clickPowerLevelNum = 1;
-let grandmaPower = 0;
+let grandmaPower = 10;
 let grandmaPriceAmount = 500;
 let grandmaPowerLevel = 0;
 let autoGrandma = false;
@@ -11,6 +11,11 @@ let facilityAuto = false;
 let facilityPower = 2000;
 let facilityPriceAmount = 100000;
 let facilityLevelNum = 0;
+let farmAuto = false;
+let farmPower = 500;
+let farmLevelNum = 0;
+let farmPriceAmount = 2500;
+
 
 ///// SET UP DOM  ///////////////////////////////////////////////
 let cookieCounter = document.getElementById('cookie-counter');
@@ -27,6 +32,10 @@ let facilityMultiple = document.getElementById('facility-multiple');
 let buyFacility = document.getElementById('buy-facility');
 let facilityPrice = document.getElementById('facility-price');
 let facilityLevel = document.getElementById('facility-level');
+let farmLevel = document.getElementById('farm-level');
+let farmMultiple = document.getElementById('farm-multiple');
+let buyFarm = document.getElementById('buy-facility');
+let farmPrice = document.getElementById('farm-price');
 
 
 ///////////COOKIE CLICKER SECTION /////////////////////////////
@@ -157,3 +166,37 @@ let autoFacilityStart = function() {
         refreshCookieCount();
     }, 1000)
 }
+
+
+///////////// Cookie Farm Section ////////////////
+buyFarm.addEventListener('click', () => {
+    console.log('Congratz you now own a cookie farm.');
+    //turn auto facility off
+    autoFarm = false;
+    //check to see if user has enough cookies
+    if (cookieCount >= farmPriceAmount) {
+        //subtract cookies and update cookie cookieCounter
+            cookieCount -= farmPriceAmount;
+            refreshCookieCount();
+        //upgrade farm power level
+            farmPower += 500 + Math.floor(farmLevelNum * 1.33);
+
+        //upgrade farm power
+            farmLevelNum += 1;
+        //increase farm price
+            farmPriceAmount += Math.floor(farmPriceAmount * 1.33);
+        //refresh shop item
+        refreshFarm();
+    } else {
+        alert('You do not have enough cookies for that.');
+    }
+
+
+    const refreshFarm = function() {
+        farmLevel.innerHTML = farmLevelNum;
+        farmPrice.innerHTML = farmPriceAmount;
+        farmMultiple.innerHTML = farmPower - 500;
+    }
+
+
+})
