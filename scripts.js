@@ -1,6 +1,6 @@
 /////DEFUALT VARIABLES ///////////////////////////////////
 let cookieCount = 0;
-let clickPower = 10;
+let clickPower = 1000;
 let clickPowerPriceAmount = 50;
 let clickPowerLevelNum = 1;
 let grandmaPower = 10;
@@ -14,7 +14,8 @@ let facilityLevelNum = 0;
 let farmAuto = false;
 let farmPower = 500;
 let farmLevelNum = 0;
-let farmPriceAmount = 2500;
+let farmPriceAmount = 25000;
+let mansionPriceAmount = 1000000;
 
 
 ///// SET UP DOM  ///////////////////////////////////////////////
@@ -36,6 +37,11 @@ let farmLevel = document.getElementById('farm-level');
 let farmMultiple = document.getElementById('farm-multiple');
 let buyFarm = document.getElementById('buy-facility');
 let farmPrice = document.getElementById('farm-price');
+//mansion dom items
+let buyMansion = document.getElementById('buy-mansion');
+let mansionPrice = document.getElementById('mansion-price');
+let houseImage = document.getElementById('house-image');
+let housePic = document.querySelector('.house-image')
 
 
 ///////////COOKIE CLICKER SECTION /////////////////////////////
@@ -89,6 +95,7 @@ const refreshClickPower = function() {
 
 //buy a grandma
 buyGrandma.addEventListener('click', () => {
+    autoGrandma = false;
     // make sure user has enough cookies to purchase
     if (cookieCount >= grandmaPriceAmount) {
         console.log('Grandma successfully purchased.');
@@ -169,7 +176,8 @@ let autoFacilityStart = function() {
 
 
 ///////////// Cookie Farm Section ////////////////
-buyFarm.addEventListener('click', () => {
+// buyFarm.addEventListener('click', function() {
+function purchaseFarm() {
     console.log('Congratz you now own a cookie farm.');
     //turn auto facility off
     autoFarm = false;
@@ -185,18 +193,45 @@ buyFarm.addEventListener('click', () => {
             farmLevelNum += 1;
         //increase farm price
             farmPriceAmount += Math.floor(farmPriceAmount * 1.33);
+            //turn autoFarm on
+            autoFarm = true;
+            autoFarmStart();
         //refresh shop item
         refreshFarm();
     } else {
         alert('You do not have enough cookies for that.');
     }
+}
 
 
     const refreshFarm = function() {
         farmLevel.innerHTML = farmLevelNum;
         farmPrice.innerHTML = farmPriceAmount;
-        farmMultiple.innerHTML = farmPower - 500;
+        farmMultiple.innerHTML = farmPower;
     }
 
 
+    const autoFarmStart = function() {
+            let farmInt = window.setInterval(function() {
+                cookieCount += farmPower;
+                refreshCookieCount();
+
+            }, 1000)
+    }
+
+
+////////////  MANSION SECTION ///////
+
+buyMansion.addEventListener('click', () => {
+    if (cookieCount >= mansionPriceAmount) {
+        //subtract price from cookies
+        cookieCount -= mansionPriceAmount;
+        refreshCookieCount();
+        // reveal mansion in UI //
+        console.log(houseImage);
+        houseImage.
+
+        // change buy button to "already bought" //
+
+    }
 })
