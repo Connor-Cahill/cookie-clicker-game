@@ -228,10 +228,11 @@ buyMansion.addEventListener('click', () => {
         cookieCount -= mansionPriceAmount;
         refreshCookieCount();
         // reveal mansion in UI //
-        console.log(houseImage);
-        houseImage.
-
+        // console.log(houseImage);
+        houseImage.style.display = 'inline';
         // change buy button to "already bought" //
+        buyMansion.innerHTML = 'Already Purchased';
+        mansionPrice.innerHTML = '';
 
     }
 })

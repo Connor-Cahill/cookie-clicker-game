@@ -12,48 +12,45 @@
             <button id="cookie-clicker"><img src="./assets/cookieImage.png" id="cookie-image"></button>
             <img src="./assets/houseIcon.png" id="house-image" class="house-image">
         </div>
-        <hr>
-        <h2 class="shop-header">Shop</h2>
-        <hr>
+        <div class="shop-header-section">
+        <h2 class="shop-header">SHOP</h2>
+    </div>
         <!-- Click Power -->
-        <div class="click-power section">
-            <p class="item-header">Click Power</p>
-            <p>Produces <span id="click-power-multiple"> 1</span> cookie(s) per click.</p>
-            <button id="buy-click-power">Buy for <span id="click-power-price">50</span> cookies.</button>
-            <p>Level: <span id="click-power-level">1</span></p>
+        <div class="shop-container">
+            <div class="click-power section">
+                <p class="item-header">Click Power</p>
+                <p>Produces <span id="click-power-multiple"> 1</span> cookie(s) per click.</p>
+                <p>Level: <span id="click-power-level">1</span></p>
+                <button id="buy-click-power" class="buy-btn">Buy for <span id="click-power-price">50</span></button>
+            </div>
+            <!-- Grandmas -->
+            <div class="grandma section">
+                <p class="item-header">Grandmas</p>
+                <p>Producing <span id="grandma-multiple"> 0</span> cookies per second.</p>
+                <p>Level: <span id="grandma-level">0</span></p>
+                <button id="buy-grandma" class="buy-btn">Buy for <span id="grandma-price">500</span></button>
+            </div>
+            <!-- Cookie Manufacturing Facility -->
+            <div class="facility section">
+                <p class="item-header">Cookie Manufacturing Facility</p>
+                <p>Producing <span id="facility-multiple">0</span> cookies per second.</p>
+                <p>Level: <span id="facility-level">0</span></p>
+                <button id="buy-facility" class="buy-btn"> Buy for <span id="facility-price">100000</span></button>
+            </div>
+            <!-- Cookie Farm  -->
+            <div class="farm section">
+                <p class="item-header">Cookie Farm</p>
+                <p>Producing <span id="farm-multiple">0</span> cookies per second.</p>
+                <p>Level: <span id="farm-level">0</span></p>
+                <button id="buy-farm" class="buy-btn" onClick="purchaseFarm()">Buy for <span id="farm-price">25000</span></button>
+            </div>
+            <!-- Buy Mansion -->
+            <div class="mansion section">
+                <p class='item-header'>Mansion</p>
+                <p>Description: Allows you to buy a mansion to retire in and spend the rest of your career relaxing.</p>
+                <button id="buy-mansion" class="buy-btn">Buy for <span id="mansion-price">1000000</span></button>
+            </div>
         </div>
-        <hr>
-        <!-- Grandmas -->
-        <div class="grandma section">
-            <p class="item-header">Grandmas</p>
-            <p>Producing <span id="grandma-multiple"> 0</span> cookies per second.</p>
-            <button id="buy-grandma">Buy for <span id="grandma-price">500</span></button>
-            <p>Level: <span id="grandma-level">0</span></p>
-        </div>
-        <hr>
-        <!-- Cookie Manufacturing Facility -->
-        <div class="facility section">
-            <p class="item-header">Cookie Manufacturing Facility</p>
-            <p>Producing <span id="facility-multiple">0</span> cookies per second.</p>
-            <button id="buy-facility">Buy for <span id="facility-price">100000</span> cookies</button>
-            <p>Level: <span id="facility-level">0</span></p>
-        </div>
-        <hr>
-        <!-- Cookie Farm  -->
-        <div class="farm section">
-            <p class="item-header">Cookie Farm</p>
-            <p>Producing <span id="farm-multiple">0</span> cookies per second.</p>
-            <button id="buy-farm" onClick="purchaseFarm()">Buy for <span id="farm-price">25000</span> cookies.</button>
-            <p>Level: <span id="farm-level">0</span></p>
-        </div>
-        <hr>
-        <!-- Buy Mansion -->
-        <div class="mansion section">
-            <p class='item-header'>Mansion</p>
-            <p>Description: Allows you to buy a mansion to retire in and spend the rest of your career relaxing.</p>
-            <button id="buy-mansion">Buy for <span id="mansion-price">1000000</span> cookies.</button>
-        </div>
-        <hr>
     <script src="scripts.js"></script>
     </body>
 </html>

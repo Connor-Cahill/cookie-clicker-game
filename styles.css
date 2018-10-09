@@ -7,6 +7,8 @@ body {
     font-size: 20px;
     margin-left: 10px;
     font-family: 'Work Sans', sans-serif;
+    background-color: #005EAC;
+    color: white;
 }
 
 
@@ -56,12 +58,13 @@ body {
     transform: translateY(-2px);
     transform: scaleY(1.10);
 }
-
-#house-image {
+/*
+.house-image {
     display: none;
-}
+} */
 
-#house-image:active {
+.house-image {
+    display: none;
     align-self: flex-end;
     width: 10em;
 
@@ -70,18 +73,99 @@ body {
 /* SHOP SECTION  */
 
 .shop-header {
-    font-size: 2em;
+    font-size: 3em;
     font-family: 'Concert One', cursive;
     margin-left: 20px;
+    text-align: center;
+    border-bottom: solid;
+    border-color: #FF4C00;
+    border-width: thick;
 
 }
+/* .shop-header-section {
+    background-color: #FF4C00;
+    z-index: 1;
+    height: 5em;
+
+} */
 
 
 .section {
     margin-left: 1em;
+    border: solid;
+    height: 20em;
+    width: 20em;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: #5FB5FD;
+
+
+}
+.shop-container {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    flex-wrap: wrap;
 }
 
 .item-header {
     font-family: 'Concert One', cursive;
     font-size: 1.2em;
+}
+
+/* .buy-btn {
+    background-color: #FF4C00;
+    color: white;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    transition-property: all;
+    transition-duration: 200ms;
+}
+
+.buy-btn:hover {
+    cursor: pointer;
+    background-color: #005EAC;
+    transform: scaleX(1.1);
+    transform: scaleY(1.1);
+
+} */
+
+.buy-btn {
+    border: none;
+font-family: inherit;
+font-size: inherit;
+color: inherit;
+background: none;
+cursor: pointer;
+padding: 25px 80px;
+display: inline-block;
+margin: 15px 30px;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: 700;
+outline: none;
+position: relative;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+background: #FF4C00;
+color: #fff;
+height: 70px;
+min-width: 260px;
+line-height: 24px;
+font-size: 16px;
+overflow: hidden;
+-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+
+.buy-btn:hover {
+    cursor: pointer;
+    border-radius: 40px;
+
 }
