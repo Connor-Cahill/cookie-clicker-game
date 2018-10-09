@@ -1,6 +1,6 @@
 /////DEFUALT VARIABLES ///////////////////////////////////
 let cookieCount = 0;
-let clickPower = 1000;
+let clickPower = 1;
 let clickPowerPriceAmount = 50;
 let clickPowerLevelNum = 1;
 let grandmaPower = 10;
